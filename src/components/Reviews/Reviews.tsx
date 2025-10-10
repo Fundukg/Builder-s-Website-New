@@ -1,7 +1,7 @@
 import { Star, User, Clock } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-interface Review {
+type Review = {
   name: string;
   location: string;
   rating: number;
