@@ -70,18 +70,14 @@ export default function About() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
         <div>
-          <img
-            src="/Images/About.jpeg"
-            alt="Наша команда на работе"
-            className="rounded-2xl shadow-2xl"
-          />
+          <img src="/Images/About.jpeg" alt="Наша команда на работе" className="rounded-2xl shadow-2xl" />
         </div>
 
         <div>
           <h3 className="text-3xl font-bold text-neutral-900 mb-6">Наша исторя</h3>
           <div className="space-y-4 text-neutral-700 leading-relaxed text-lg">
             <p>
-              Компания TimberCraft Builders была основана в 2005 году благодаря страсти к традиционному строительству
+              Компания "тут будет название" была основана в 2005 году благодаря страсти к традиционному строительству
               бревенчатых домов и приверженности к качественному мастерству. Начав с небольшого семейного предприятия,
               мы превратились в надежного производителя бревенчатых и каркасных домов.
             </p>

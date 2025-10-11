@@ -1,7 +1,7 @@
-import { Target, Heart, Award, Users, LucideIcon } from 'lucide-react';
+import { Target, Heart, Award, Users, LucideIcon, Lock, Wrench } from 'lucide-react';
 
 // Создаем тип для доступных иконок
-export type IconName = 'Target' | 'Heart' | 'Award' | 'Users';
+export type IconName = 'Target' | 'Heart' | 'Award' | 'Users' | 'Lock' | 'Wrench';
 
 // Объект, который сопоставляет строковые названия с компонентами иконок
 export const iconMap: Record<IconName, LucideIcon> = {
@@ -9,6 +9,8 @@ export const iconMap: Record<IconName, LucideIcon> = {
   Heart, 
   Award,
   Users,
+  Lock,
+  Wrench
 };
 
 // Вспомогательная функция для безопасного получения иконки

@@ -1,39 +1,39 @@
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
-import { useState } from 'react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react'
+// import { useState } from 'react'
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
-  });
+  //   const [formData, setFormData] = useState({
+  //     name: '',
+  //     email: '',
+  //     phone: '',
+  //     service: '',
+  //     message: '',
+  //   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('Thank you for your inquiry! We will contact you soon.');
-    setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-  };
+  //   const handleSubmit = (e: React.FormEvent) => {
+  //     e.preventDefault()
+  //     alert('Thank you for your inquiry! We will contact you soon.')
+  //     setFormData({ name: '', email: '', phone: '', service: '', message: '' })
+  //   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  //   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  //     setFormData({
+  //       ...formData,
+  //       [e.target.name]: e.target.value,
+  //     })
+  // }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">Get In Touch</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">Свяжитесь с нами</h2>
         <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
-          Ready to start your project? Contact us for a free consultation and estimate
+          Готовы начать свой проект? Свяжитесь с нами для бесплатной консультации и расчета стоимости.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <div className="lg:col-span-2">
+        {/* <div className="lg:col-span-2">
           <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
@@ -106,8 +106,8 @@ export default function Contact() {
                   <option value="renovation">Renovations & Repairs</option>
                   <option value="other">Other / Consultation</option>
                 </select>
-              </div>
-            </div>
+              </div> 
+            </div> 
 
             <div className="mb-6">
               <label htmlFor="message" className="block text-sm font-semibold text-neutral-700 mb-2">
@@ -133,11 +133,13 @@ export default function Contact() {
               <Send className="h-5 w-5" />
             </button>
           </form>
+        </div> */}
+        <div className="lg:col-span-2">
+          <img src="/Images/Contact.jpeg" alt="Проект дома" className="rounded-2xl shadow-2xl" />
         </div>
-
         <div className="space-y-6">
           <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="text-2xl font-bold text-neutral-900 mb-6">Contact Information</h3>
+            <h3 className="text-2xl font-bold text-neutral-900 mb-6">Контактная информация</h3>
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
@@ -145,15 +147,15 @@ export default function Contact() {
                   <Phone className="h-6 w-6 text-green-700" />
                 </div>
                 <div>
-                  <div className="font-semibold text-neutral-900 mb-1">Phone</div>
-                  <a href="tel:+15551234567" className="text-neutral-600 hover:text-green-700 transition-colors">
-                    (555) 123-4567
+                  <div className="font-semibold text-neutral-900 mb-1">Номер телефона</div>
+                  <a href="tel:+78212558880" className="text-neutral-600 hover:text-green-700 transition-colors">
+                    +7 (821) 255-88-80
                   </a>
-                  <div className="text-sm text-neutral-500 mt-1">Main Office</div>
-                  <a href="tel:+15557654321" className="text-neutral-600 hover:text-green-700 transition-colors">
-                    (555) 765-4321
+                  <div className="text-sm text-neutral-500 mt-1"> Первый номер телефона</div>
+                  <a href="tel:+79009758880" className="text-neutral-600 hover:text-green-700 transition-colors">
+                    +7 (900) 975-88-80
                   </a>
-                  <div className="text-sm text-neutral-500">Emergency Line</div>
+                  <div className="text-sm text-neutral-500 mt-1"> Второй номер телефона</div>
                 </div>
               </div>
 
@@ -162,15 +164,21 @@ export default function Contact() {
                   <Mail className="h-6 w-6 text-green-700" />
                 </div>
                 <div>
-                  <div className="font-semibold text-neutral-900 mb-1">Email</div>
-                  <a href="mailto:info@timbercraftbuilders.com" className="text-neutral-600 hover:text-green-700 transition-colors">
-                    info@timbercraftbuilders.com
+                  <div className="font-semibold text-neutral-900 mb-1">Электронная почта</div>
+                  <a
+                    href="mailto:info@timbercraftbuilders.com"
+                    className="text-neutral-600 hover:text-green-700 transition-colors"
+                  >
+                    Тут будет электронная почта
                   </a>
-                  <div className="text-sm text-neutral-500 mt-1">General Inquiries</div>
-                  <a href="mailto:projects@timbercraftbuilders.com" className="text-neutral-600 hover:text-green-700 transition-colors">
-                    projects@timbercraftbuilders.com
+                  <div className="text-sm text-neutral-500 mt-1">Рабочая почта</div>
+                  <a
+                    href="mailto:projects@timbercraftbuilders.com"
+                    className="text-neutral-600 hover:text-green-700 transition-colors"
+                  >
+                    Тут будет электронная почта
                   </a>
-                  <div className="text-sm text-neutral-500">New Projects</div>
+                  <div className="text-sm text-neutral-500">Личная почта</div>
                 </div>
               </div>
 
@@ -179,11 +187,16 @@ export default function Contact() {
                   <MapPin className="h-6 w-6 text-green-700" />
                 </div>
                 <div>
-                  <div className="font-semibold text-neutral-900 mb-1">Location</div>
+                  <div className="font-semibold text-neutral-900 mb-1">Расположение</div>
                   <div className="text-neutral-600">
-                    123 Timber Lane<br />
-                    Mountain View, VT 05001<br />
-                    United States
+                    <div className="text-sm text-neutral-500">Места где мы работаем: </div>
+                    Сыктывкар
+                    <br />
+                    Дыронс
+                    <br />
+                    Выльгорт
+                    <br />
+                    Максаковка
                   </div>
                 </div>
               </div>
@@ -193,11 +206,13 @@ export default function Contact() {
                   <Clock className="h-6 w-6 text-green-700" />
                 </div>
                 <div>
-                  <div className="font-semibold text-neutral-900 mb-1">Business Hours</div>
+                  <div className="font-semibold text-neutral-900 mb-1">Рабочие часы</div>
                   <div className="text-neutral-600">
-                    Monday - Friday: 7:00 AM - 6:00 PM<br />
-                    Saturday: 8:00 AM - 4:00 PM<br />
-                    Sunday: Closed
+                    Понедельник - Пятница: 7:00 - 18:00
+                    <br />
+                    Суббота: 8:00 - 16:00
+                    <br />
+                    Воскресенье: Выходной
                   </div>
                 </div>
               </div>
@@ -205,16 +220,17 @@ export default function Contact() {
           </div>
 
           <div className="bg-gradient-to-br from-green-700 to-green-800 rounded-2xl shadow-xl p-8 text-white">
-            <h3 className="text-xl font-bold mb-3">Free Consultation</h3>
+            <h3 className="text-xl font-bold mb-3">Бсплатная консультация</h3>
             <p className="text-green-50 mb-4">
-              Not sure where to start? Schedule a free consultation with our experts to discuss your project.
+              Не знаете, с чего начать? Запишитесь на бесплатную консультацию с нашими специалистами, чтобы обсудить ваш
+              проект.
             </p>
-            <button className="w-full bg-white text-green-800 py-3 rounded-lg font-semibold hover:bg-green-50 transition-all">
-              Schedule Now
-            </button>
+            {/* <button className="w-full bg-white text-green-800 py-3 rounded-lg font-semibold hover:bg-green-50 transition-all">
+              Запланируйте сейчас
+            </button> */}
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }

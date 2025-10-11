@@ -1,50 +1,50 @@
-import { Star, User, Clock } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { Star, User, Clock } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 type Review = {
-  name: string;
-  location: string;
-  rating: number;
-  date: string;
-  text: string;
-  project: string;
+  name: string
+  location: string
+  rating: number
+  date: string
+  text: string
+  project: string
 }
 
 export default function Reviews() {
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [reviews, setReviews] = useState<Review[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const loadReviews = async () => {
       try {
-        const response = await fetch('/Data/Reviews.json');
+        const response = await fetch('/Data/Reviews.json')
         if (!response.ok) {
-          throw new Error('Failed to load reviews');
+          throw new Error('Failed to load reviews')
         }
-        const data = await response.json();
-        
+        const data = await response.json()
+
         // ВАЖНО: Проверяем структуру данных
         if (data.reviews && Array.isArray(data.reviews)) {
-          setReviews(data.reviews);
+          setReviews(data.reviews)
         } else if (Array.isArray(data)) {
           // Если JSON содержит сразу массив, а не объект с полем reviews
-          setReviews(data);
+          setReviews(data)
         } else {
-          console.error('Unexpected data structure:', data);
-          setReviews([]);
+          console.error('Unexpected data structure:', data)
+          setReviews([])
         }
       } catch (err) {
-        setError('Error loading reviews');
-        console.error('Error loading reviews:', err);
-        setReviews([]); // Всегда устанавливаем массив даже при ошибке
+        setError('Error loading reviews')
+        console.error('Error loading reviews:', err)
+        setReviews([]) // Всегда устанавливаем массив даже при ошибке
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
+    }
 
-    loadReviews();
-  }); 
+    loadReviews()
+  })
 
   const renderStars = (rating: number) => {
     return (
@@ -53,15 +53,13 @@ export default function Reviews() {
           <Star
             key={index}
             className={`h-5 w-5 ${
-              index < rating
-                ? 'fill-yellow-400 text-yellow-400'
-                : 'fill-neutral-200 text-neutral-200'
+              index < rating ? 'fill-yellow-400 text-yellow-400' : 'fill-neutral-200 text-neutral-200'
             }`}
           />
         ))}
       </div>
-    );
-  };
+    )
+  }
 
   if (loading) {
     return (
@@ -70,17 +68,15 @@ export default function Reviews() {
           <div className="animate-pulse">Загрузка отзывов...</div>
         </div>
       </div>
-    );
+    )
   }
 
   if (error) {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center py-16 text-red-500">
-          {error}
-        </div>
+        <div className="text-center py-16 text-red-500">{error}</div>
       </div>
-    );
+    )
   }
 
   return (
@@ -151,5 +147,5 @@ export default function Reviews() {
         </button>
       </div>
     </div>
-  );
+  )
 }
