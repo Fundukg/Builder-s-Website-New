@@ -164,7 +164,7 @@ export default function Contact() {
                   <Mail className="h-6 w-6 text-green-700" />
                 </div>
                 <div>
-                  <div className="font-semibold text-neutral-900 mb-1">Электронная почта</div>
+                  <div className="font-semibold text-neutral-900 mb-1">Email</div>
                   <a
                     href="mailto:info@timbercraftbuilders.com"
                     className="text-neutral-600 hover:text-green-700 transition-colors"
@@ -187,10 +187,12 @@ export default function Contact() {
                   <MapPin className="h-6 w-6 text-green-700" />
                 </div>
                 <div>
-                  <div className="font-semibold text-neutral-900 mb-1">Расположение</div>
+                  <div className="font-semibold text-neutral-900 mb-1">Зоны обслуживания</div>
                   <div className="text-neutral-600">
                     <div className="text-sm text-neutral-500">Места где мы работаем: </div>
                     Сыктывкар
+                    <br />
+                    Давпон
                     <br />
                     Дыронс
                     <br />

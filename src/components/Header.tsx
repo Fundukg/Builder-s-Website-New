@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import { Menu, X, Home } from 'lucide-react';
+import { useState } from 'react';
 
-interface HeaderProps {
+type HeaderProps = {
   activeSection: string;
   setActiveSection: (section: string) => void;
 }
