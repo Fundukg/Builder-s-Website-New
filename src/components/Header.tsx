@@ -10,14 +10,14 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'services', label: 'Services' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'gallery', label: 'Photos' },
-    { id: 'videos', label: 'Videos' },
-    { id: 'reviews', label: 'Reviews' },
-    { id: 'about', label: 'About Us' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'home', label: 'Главная' },
+    { id: 'services', label: 'Услуги' },
+    { id: 'projects', label: 'Проекты' },
+    { id: 'gallery', label: 'Галерея' },
+    { id: 'videos', label: 'Видео' },
+    { id: 'reviews', label: 'Отзывы' },
+    { id: 'about', label: 'О нас' },
+    { id: 'contact', label: 'Контакты' },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -43,8 +43,8 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => scrollToSection('home')}>
             <Home className="h-8 w-8 text-green-700" />
             <div>
-              <h1 className="text-2xl font-bold text-neutral-900">TimberCraft Builders</h1>
-              <p className="text-xs text-neutral-600">Quality Construction Since 2005</p>
+              <h1 className="text-2xl font-bold text-neutral-900">Тут будет название компании</h1>
+              <p className="text-xs text-neutral-600">Качественное строительство с 2005 года</p>
             </div>
           </div>
 

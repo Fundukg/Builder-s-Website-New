@@ -8,7 +8,7 @@ import Projects from './components/Projects';
 import Reviews from './components/Reviews/Reviews';
 import About from './components/About';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
