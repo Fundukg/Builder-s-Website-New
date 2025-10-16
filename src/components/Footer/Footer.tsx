@@ -62,7 +62,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3 mb-6">
               <Home className="h-8 w-8 text-green-500" />
               <div>
-                <h3 className="text-xl font-bold text-white">Тут будет название компании</h3>
+                <h3 className="text-xl font-bold text-white">Домpro</h3>
                 <p className="text-xs text-neutral-400">С 2005 года</p>
               </div>
             </div>
@@ -88,13 +88,11 @@ export default function Footer() {
                 <FaWhatsapp className="h-7 w-7" />
               </a>
               <a
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollToSection('contact')
-                }}
+                href="https://www.avito.ru/syktyvkar/predlozheniya_uslug/stroitelstvo_remont_otdelkakrovlyazaborydoma_2086818000?utm_campaign=native&utm_medium=item_page_android&utm_source=soc_sharing_seller"
+                target='_blank'
                 className="p-2 bg-neutral-800 rounded-lg hover:bg-green-700 transition-colors"
               >
-                <FaTelegramPlane className="h-7 w-7" />
+                <img src="Images/avito.svg" className="h-7 w-7" />
               </a>
             </div>
           </div>
@@ -122,11 +120,11 @@ export default function Footer() {
                   Галерия
                 </button>
               </li>
-              <li>
+              {/* <li>
                 <button onClick={() => scrollToSection('videos')} className="hover:text-green-500 transition-colors">
                   Видео
                 </button>
-              </li>
+              </li> */}
               <li>
                 <button onClick={() => scrollToSection('reviews')} className="hover:text-green-500 transition-colors">
                   Отзывы

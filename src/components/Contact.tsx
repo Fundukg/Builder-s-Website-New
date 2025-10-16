@@ -189,9 +189,7 @@ export default function Contact() {
                 <div>
                   <div className="font-semibold text-neutral-900 mb-1">Зоны обслуживания</div>
                   <div className="text-neutral-600">
-                    <div className="text-sm text-neutral-500">Места где мы работаем: </div>
-                    Сыктывкар
-                    <br />
+                    <div className="text-sm text-neutral-500">Работаем (Сыктывкар и 100+ км): </div>
                     Давпон
                     <br />
                     Дыронс

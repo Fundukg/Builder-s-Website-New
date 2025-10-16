@@ -22,7 +22,6 @@ export default function About() {
         // ВАЖНО: Проверяем структуру данных
         if (data.about && Array.isArray(data.about)) {
           setAbout(data.about)
-          console.log(data.about)
         } else if (Array.isArray(data)) {
           // Если JSON содержит сразу массив, а не объект с полем about
           setAbout(data)
@@ -77,7 +76,7 @@ export default function About() {
           <h3 className="text-3xl font-bold text-neutral-900 mb-6">Наша исторя</h3>
           <div className="space-y-4 text-neutral-700 leading-relaxed text-lg">
             <p>
-              Компания "тут будет название" была основана в 2005 году благодаря страсти к традиционному строительству
+              Компания Домpro была основана в 2005 году благодаря страсти к традиционному строительству
               бревенчатых домов и приверженности к качественному мастерству. Начав с небольшого семейного предприятия,
               мы превратились в надежного производителя бревенчатых и каркасных домов.
             </p>

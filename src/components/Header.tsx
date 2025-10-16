@@ -1,5 +1,7 @@
+// components/Header.tsx
 import { Menu, X, Home } from 'lucide-react';
 import { useState } from 'react';
+import { NAV_ITEMS } from '../App'; // Импортируем из App.tsx
 
 type HeaderProps = {
   activeSection: string;
@@ -8,17 +10,6 @@ type HeaderProps = {
 
 export default function Header({ activeSection, setActiveSection }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navItems = [
-    { id: 'home', label: 'Главная' },
-    { id: 'services', label: 'Услуги' },
-    { id: 'projects', label: 'Проекты' },
-    { id: 'gallery', label: 'Галерея' },
-    { id: 'videos', label: 'Видео' },
-    { id: 'reviews', label: 'Отзывы' },
-    { id: 'about', label: 'О нас' },
-    { id: 'contact', label: 'Контакты' },
-  ];
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -31,8 +22,10 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
         top: offsetPosition,
         behavior: 'smooth'
       });
+      
+      // Устанавливаем активную секцию сразу при клике
+      setActiveSection(sectionId);
     }
-    setActiveSection(sectionId);
     setMobileMenuOpen(false);
   };
 
@@ -40,16 +33,21 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
     <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => scrollToSection('home')}>
-            <Home className="h-8 w-8 text-green-700" />
+          {/* Логотип */}
+          <div 
+            className="flex items-center space-x-3 cursor-pointer" 
+            onClick={() => scrollToSection('home')}
+          >
+            <Home className="h-8 w-8 text-green-700 flex-shrink-0 " />
             <div>
-              <h1 className="text-2xl font-bold text-neutral-900">Тут будет название компании</h1>
+              <h1 className="text-2xl font-bold text-neutral-900">Домpro</h1>
               <p className="text-xs text-neutral-600">Качественное строительство с 2005 года</p>
             </div>
           </div>
 
+          {/* Десктопная навигация */}
           <nav className="hidden md:flex space-x-1">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
@@ -64,6 +62,7 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
             ))}
           </nav>
 
+          {/* Кнопка мобильного меню */}
           <button
             className="md:hidden p-2 rounded-lg hover:bg-neutral-100"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -73,10 +72,11 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
         </div>
       </div>
 
+      {/* Мобильное меню */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-neutral-200 bg-white">
           <nav className="px-4 py-4 space-y-2">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}

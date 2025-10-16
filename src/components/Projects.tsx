@@ -1,69 +1,74 @@
-import { Calendar, MapPin, Clock } from 'lucide-react';
+import { MapPin, Clock } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
+type Projects = {
+  title: string
+  category: string
+  location: string
+  duration: string
+  year: string
+  image: string
+  description: string
+}
 export default function Projects() {
-  const projects = [
-    {
-      title: 'Mountain Log Retreat',
-      category: 'Log House Construction',
-      location: 'Vermont',
-      duration: '6 months',
-      year: '2024',
-      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Beautiful 2,500 sq ft log home featuring hand-crafted details and modern amenities.',
-    },
-    {
-      title: 'Modern Frame Family Home',
-      category: 'Frame House Building',
-      location: 'New Hampshire',
-      duration: '4 months',
-      year: '2024',
-      image: 'https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Contemporary 3,200 sq ft frame house with open-concept design and energy-efficient features.',
-    },
-    {
-      title: 'Historic Log Home Restoration',
-      category: 'Crown Replacement',
-      location: 'Maine',
-      duration: '3 months',
-      year: '2023',
-      image: 'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Complete crown replacement and restoration of a 100-year-old log cabin.',
-    },
-    {
-      title: 'Lakeside Log Cabin',
-      category: 'Log House Construction',
-      location: 'New York',
-      duration: '5 months',
-      year: '2023',
-      image: 'https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Rustic 1,800 sq ft log cabin with stunning lake views and premium timber construction.',
-    },
-    {
-      title: 'Premium Roofing Installation',
-      category: 'Roofing Services',
-      location: 'Massachusetts',
-      duration: '2 weeks',
-      year: '2023',
-      image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Complete roof replacement with architectural shingles and enhanced insulation.',
-    },
-    {
-      title: 'Custom Frame Workshop',
-      category: 'Frame House Building',
-      location: 'Connecticut',
-      duration: '2 months',
-      year: '2023',
-      image: 'https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Large 1,500 sq ft workshop with high ceilings and specialized ventilation.',
-    },
-  ];
+  const [projects, setProjects] = useState<Projects[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    const loadProjects = async () => {
+      try {
+        const response = await fetch('/Data/Projects.json')
+        if (!response.ok) {
+          throw new Error('Failed to load projects')
+        }
+        const data = await response.json()
+
+        // ВАЖНО: Проверяем структуру данных
+        if (data.projects && Array.isArray(data.projects)) {
+          setProjects(data.projects)
+        } else if (Array.isArray(data)) {
+          // Если JSON содержит сразу массив, а не объект с полем projects
+          setProjects(data)
+        } else {
+          console.error('Unexpected data structure:', data)
+          setProjects([])
+        }
+      } catch (err) {
+        setError('Error loading projects')
+        console.error('Error loading projects:', err)
+        setProjects([]) // Всегда устанавливаем массив даже при ошибке
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadProjects()
+  })
+  if (loading) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center py-16">
+          <div className="animate-pulse">Загрузка проектов...</div>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center py-16 text-red-500">{error}</div>
+      </div>
+    )
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">Featured Projects</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">Рекомендуемые проекты</h2>
         <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
-          Explore our portfolio of completed construction projects
+          Ознакомьтесь с нашим портфолио завершенных строительных проектов
         </p>
       </div>
 
@@ -107,5 +112,5 @@ export default function Projects() {
         ))}
       </div>
     </div>
-  );
+  )
 }
