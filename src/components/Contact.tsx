@@ -148,14 +148,14 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="font-semibold text-neutral-900 mb-1">Номер телефона</div>
-                  <a href="tel:+78212558880" className="text-neutral-600 hover:text-green-700 transition-colors">
-                    +7 (821) 255-88-80
+                  <a href="tel:+88212558880" className="text-neutral-600 hover:text-green-700 transition-colors">
+                    8 (8212) 55-88-80
                   </a>
-                  <div className="text-sm text-neutral-500 mt-1"> Первый номер телефона</div>
+                  <div className="text-sm text-neutral-500 mt-1">Короткий номер телефона</div>
                   <a href="tel:+79009758880" className="text-neutral-600 hover:text-green-700 transition-colors">
-                    +7 (900) 975-88-80
+                    8 (900) 975-88-80
                   </a>
-                  <div className="text-sm text-neutral-500 mt-1"> Второй номер телефона</div>
+                  <div className="text-sm text-neutral-500 mt-1">Номер телефона</div>
                 </div>
               </div>
 
@@ -169,16 +169,16 @@ export default function Contact() {
                     href="mailto:info@timbercraftbuilders.com"
                     className="text-neutral-600 hover:text-green-700 transition-colors"
                   >
-                    Тут будет электронная почта
+                    domapro11@gmail.com
                   </a>
                   <div className="text-sm text-neutral-500 mt-1">Рабочая почта</div>
-                  <a
+                  {/* <a
                     href="mailto:projects@timbercraftbuilders.com"
                     className="text-neutral-600 hover:text-green-700 transition-colors"
                   >
                     Тут будет электронная почта
                   </a>
-                  <div className="text-sm text-neutral-500">Личная почта</div>
+                  <div className="text-sm text-neutral-500">Личная почта</div> */}
                 </div>
               </div>
 
@@ -189,14 +189,14 @@ export default function Contact() {
                 <div>
                   <div className="font-semibold text-neutral-900 mb-1">Зоны обслуживания</div>
                   <div className="text-neutral-600">
-                    <div className="text-sm text-neutral-500">Работаем (Сыктывкар и 100+ км): </div>
-                    Давпон
-                    <br />
+                    {/* <div className="text-sm text-neutral-500">Работаем (Сыктывкар и 100+ км): </div> */}
+                    Республика Коми
+                    {/* <br />
                     Дыронс
                     <br />
                     Выльгорт
                     <br />
-                    Максаковка
+                    Максаковка */}
                   </div>
                 </div>
               </div>

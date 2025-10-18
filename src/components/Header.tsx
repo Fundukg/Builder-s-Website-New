@@ -1,5 +1,5 @@
 // components/Header.tsx
-import { Menu, X, Home } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { NAV_ITEMS } from '../App'; // Импортируем из App.tsx
 
@@ -38,7 +38,7 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
             className="flex items-center space-x-3 cursor-pointer" 
             onClick={() => scrollToSection('home')}
           >
-            <Home className="h-8 w-8 text-green-700 flex-shrink-0 " />
+            <img src="/LogoB.png" alt="Logo" className=" w-20 h-19" />
             <div>
               <h1 className="text-2xl font-bold text-neutral-900">Домpro</h1>
               <p className="text-xs text-neutral-600">Качественное строительство с 2005 года</p>

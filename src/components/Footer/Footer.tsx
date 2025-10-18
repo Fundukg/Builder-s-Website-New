@@ -1,6 +1,6 @@
-import { Home, Mail, Phone, MapPin } from 'lucide-react'
+import {  Mail, Phone, MapPin } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { FaWhatsapp, FaTelegramPlane } from 'react-icons/fa'
+import { FaWhatsapp } from 'react-icons/fa'
 import { MdOutlinePrivacyTip } from 'react-icons/md'
 import { RiVkLine } from 'react-icons/ri'
 
@@ -60,7 +60,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <Home className="h-8 w-8 text-green-500" />
+              <img src="/LogoW.png" fill-opacity="0" className="h-21 w-20 text-green-500 font-bold" />
               <div>
                 <h3 className="text-xl font-bold text-white">Домpro</h3>
                 <p className="text-xs text-neutral-400">С 2005 года</p>
@@ -177,7 +177,7 @@ export default function Footer() {
                 <div>
                   <div className="text-white font-medium mb-1">Номер телефона</div>
                   <a href="tel:+78212558880" className="hover:text-green-500 transition-colors text-sm">
-                    +7 (821) 255-88-80
+                    +7 (8212) 255-88-80
                   </a>
                   <br />
                   <a href="tel:+79009758880" className="hover:text-green-500 transition-colors text-sm">
@@ -190,7 +190,7 @@ export default function Footer() {
                 <div>
                   <div className="text-white font-medium mb-1">Email</div>
                   <a href="mailto:max.arendaruk@gmail.com" className="hover:text-green-500 transition-colors text-sm">
-                    Тут будет адрес электронной почты
+                    domapro11@gmail.com
                   </a>
                 </div>
               </li>
@@ -206,7 +206,7 @@ export default function Footer() {
             </div>
             <div className="text-sm text-neutral-400">
               <p className="font-semibold text-white mb-1">Зоны обслуживания</p>
-              <p>Сыктывкар, Выльгорт, Давпон, Дырнос, Максаковка</p>
+              <p>Республика Коми</p>
             </div>
           </div>
         </div>

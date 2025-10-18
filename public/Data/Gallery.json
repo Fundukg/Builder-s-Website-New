@@ -1,62 +1,62 @@
 [
-{
-"url": "Images/Gallery/1.jpg",
-"title": "Внешний вид бревенчатого дома",
-"category": "Бревенчатые дома"
-},
-{
-"url": "Images/Gallery/2.jpg",
-"title": "Традиционный бревенчатый дом",
-"category": "Бревенчатые дома"
-},
-{
-"url": "Images/Gallery/3.jpg",
-"title": "Бревенчатый дом на берегу озера",
-"category": "Бревенчатые дома"
-},
-{
-"url": "Images/Gallery/4.jpg",
-"title": "Современный каркасный дом",
-"category": "Каркасные дома"
-},
-{
-"url": "Images/Gallery/5.jpg",
-"title": "Кровля премиум-класса",
-"category": "Кровля"
-},
-{
-"url": "Images/Gallery/6.jpg",
-"title": "Мастерская на заказ",
-"category": "Каркасные дома"
-},
-{
-"url": "Images/Gallery/7.jpg",
-"title": "Интерьер бревенчатого дома",
-"category": "Интерьеры"
-},
-{
-"url": "Images/Gallery/8.jpg",
-"title": "Детали конструкции",
-"category": "Строительство"
-},
-{
-"url": "Images/Gallery/9.jpg",
-"title": "Деревенский бревенчатый дом",
-"category": "Бревенчатые дома"
-},
-{
-"url": "Images/Gallery/10.jpg",
-"title": "Горный дом",
-"category": "Бревенчатые дома"
-},
-{
-"url": "Images/Gallery/11.jpg",
-"title": "Монтаж крыши",
-"category": "Кровля"
-},
-{
-"url": "Images/Gallery/12.jpg",
-"title": "Каркасное строительство",
-"category": "Каркасные дома"
-}
+  {
+    "url": "Images/Gallery/1.jpg",
+    "title": "Ремонт санузла",
+    "category": "Ремонт"
+  },
+  {
+    "url": "Images/Gallery/2.jpg",
+    "title": "Пристройка к бане",
+    "category": "Пристройка"
+  },
+  {
+    "url": "Images/Gallery/3.jpg",
+    "title": "Дом из бруса в деревне",
+    "category": "Дом из бруса"
+  },
+  {
+    "url": "Images/Gallery/4.jpg",
+    "title": "Современный кирпичный дом",
+    "category": "Кирпичный дом"
+  },
+  {
+    "url": "Images/Gallery/5.jpg",
+    "title": "Кровля премиум-класса",
+    "category": "Кровля"
+  },
+  {
+    "url": "Images/Gallery/6.jpg",
+    "title": "Мастерская на заказ",
+    "category": "Каркасные дома"
+  },
+  {
+    "url": "Images/Gallery/7.jpg",
+    "title": "Ремнот в бревенчатом доме",
+    "category": "Ремнот"
+  },
+  {
+    "url": "Images/Gallery/8.jpg",
+    "title": "Обновление дома сайдингом",
+    "category": "Реставрайция"
+  },
+  {
+    "url": "Images/Gallery/9.jpg",
+    "title": "Отделка под ключ",
+    "category": "Отделка дома"
+  },
+  {
+    "url": "Images/Gallery/10.jpg",
+    "title": "Дачный дом",
+    "category": "Каркасный дом"
+  },
+  {
+    "url": "Images/Gallery/11.jpg",
+    "title": "Дома из бруса под заказ",
+    "category": "Дома из бруса"
+  },
+  {
+    "url": "Images/Gallery/12.jpg",
+    "title": "Обновление дома сайдингом",
+    "category": "Реставрайция"
+  }
 ]
