@@ -61,55 +61,60 @@ export default function Gallery() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">Галерея</h2>
-        <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
-          Просмотрите нашу коллекцию завершенных проектов и текущих работ
-        </p>
-      </div>
+    <section aria-labelledby="services-heading">
+      <h2 id="services-heading" className="sr-only">
+        Галерея
+      </h2>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">Галерея</h2>
+          <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+            Просмотрите нашу коллекцию завершенных проектов и текущих работ
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className="relative group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all"
-            onClick={() => setSelectedImage(image.url)}
-          >
-            <img
-              src={image.url}
-              alt={image.title}
-              className="w-full h-64 object-cover transition-transform group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="text-white font-semibold text-lg">{image.title}</p>
-                <p className="text-green-300 text-sm">{image.category}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="relative group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all"
+              onClick={() => setSelectedImage(image.url)}
+            >
+              <img
+                src={image.url}
+                alt={image.title}
+                className="w-full h-64 object-cover transition-transform group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <p className="text-white font-semibold text-lg">{image.title}</p>
+                  <p className="text-green-300 text-sm">{image.category}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
-        >
-          <button
-            className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+        {selectedImage && (
+          <div
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
             onClick={() => setSelectedImage(null)}
           >
-            <X className="h-6 w-6 text-white" />
-          </button>
-          <img
-            src={selectedImage}
-            alt="Full size"
-            className="max-w-full max-h-full object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
-    </div>
+            <button
+              className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X className="h-6 w-6 text-white" />
+            </button>
+            <img
+              src={selectedImage}
+              alt="Full size"
+              className="max-w-full max-h-full object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        )}
+      </div>
+    </section>
   )
 }

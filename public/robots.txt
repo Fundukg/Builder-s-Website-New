@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Запрещаем индексацию служебных путей
+Disallow: /admin
+Disallow: /cgi-bin
+Disallow: /tmp
+
+# Указываем путь к sitemap
+Sitemap: https://dompro11.ru/sitemap.xml
+
+# Предпочтения для разных поисковых систем
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1

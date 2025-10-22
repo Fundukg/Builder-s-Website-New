@@ -60,53 +60,60 @@ export default function Services() {
     )
   }
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">Наши услуги</h2>
-        <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
-         Комплексные строительные решения от фундамента до отделки
-        </p>
-      </div>
+    <section aria-labelledby="services-heading">
+      <h2 id="services-heading" className="sr-only">
+        Наши услуги
+      </h2>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">Наши услуги</h2>
+          <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+            Комплексные строительные решения от фундамента до отделки
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service, index) => {
-          const IconComponent = getIconComponent(service.icon)
-          return (
-            <div
-              key={index}
-              className={`p-8 rounded-xl border-2 transition-all hover:shadow-xl ${
-                service.featured
-                  ? 'bg-gradient-to-br from-green-50 to-white border-green-300 shadow-lg'
-                  : 'bg-white border-neutral-200 hover:border-green-300'
-              }`}
-            >
-              <div className={`inline-flex p-4 rounded-lg mb-6 ${service.featured ? 'bg-green-700' : 'bg-green-100'}`}>
-                <IconComponent className={`h-8 w-8 ${service.featured ? 'text-white' : 'text-green-700'}`} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => {
+            const IconComponent = getIconComponent(service.icon)
+            return (
+              <div
+                key={index}
+                className={`p-8 rounded-xl border-2 transition-all hover:shadow-xl ${
+                  service.featured
+                    ? 'bg-gradient-to-br from-green-50 to-white border-green-300 shadow-lg'
+                    : 'bg-white border-neutral-200 hover:border-green-300'
+                }`}
+              >
+                <div
+                  className={`inline-flex p-4 rounded-lg mb-6 ${service.featured ? 'bg-green-700' : 'bg-green-100'}`}
+                >
+                  <IconComponent className={`h-8 w-8 ${service.featured ? 'text-white' : 'text-green-700'}`} />
+                </div>
+
+                {service.featured && (
+                  <span className="inline-block px-3 py-1 bg-green-700 text-white text-xs font-semibold rounded-full mb-4">
+                    СПЕЦИАЛЬНОСТЬ
+                  </span>
+                )}
+
+                <h3 className="text-2xl font-bold text-neutral-900 mb-4">{service.title}</h3>
+                <p className="text-neutral-600 leading-relaxed">{service.description}</p>
               </div>
+            )
+          })}
+        </div>
 
-              {service.featured && (
-                <span className="inline-block px-3 py-1 bg-green-700 text-white text-xs font-semibold rounded-full mb-4">
-                  СПЕЦИАЛЬНОСТЬ
-                </span>
-              )}
-
-              <h3 className="text-2xl font-bold text-neutral-900 mb-4">{service.title}</h3>
-              <p className="text-neutral-600 leading-relaxed">{service.description}</p>
-            </div>
-          )
-        })}
+        <div className="mt-16 bg-gradient-to-r from-green-700 to-green-800 rounded-2xl p-8 md:p-12 text-white text-center">
+          <h3 className="text-3xl font-bold mb-4">Вам нужно индивидуальное решение?</h3>
+          <p className="text-xl mb-6 text-green-50">Мы здесь, чтобы обсудить ваши уникальные требования к проекту</p>
+          <button
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-8 py-4 bg-white text-green-800 rounded-lg font-semibold hover:bg-green-50 transition-all transform hover:scale-105"
+          >
+            Свяжитесь с нами сегодня
+          </button>
+        </div>
       </div>
-
-      <div className="mt-16 bg-gradient-to-r from-green-700 to-green-800 rounded-2xl p-8 md:p-12 text-white text-center">
-        <h3 className="text-3xl font-bold mb-4">Вам нужно индивидуальное решение?</h3>
-        <p className="text-xl mb-6 text-green-50">Мы здесь, чтобы обсудить ваши уникальные требования к проекту</p>
-        <button
-          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          className="px-8 py-4 bg-white text-green-800 rounded-lg font-semibold hover:bg-green-50 transition-all transform hover:scale-105"
-        >
-          Свяжитесь с нами сегодня
-        </button>
-      </div>
-    </div>
+    </section>
   )
 }
